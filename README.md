@@ -34,7 +34,7 @@ docker run -it --rm \
   afrunt/ubuntu-copilot-cli
 ```
 
-`docker-compose.yml` has the same setup (`docker compose run --rm copilot`). Project-level MCP config in the mounted workspace also works. Pass secrets used by MCP servers via `-e`.
+Project-level MCP config in the mounted workspace also works. Pass secrets used by MCP servers via `-e`.
 
 ## Local build
 
