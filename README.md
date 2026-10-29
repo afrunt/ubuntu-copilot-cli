@@ -39,7 +39,7 @@ Project-level MCP config in the mounted workspace also works. Pass secrets used 
 ## Local build
 
 ```bash
-docker build -t ubuntu-copilot-cli .
+docker build -t afrunt/ubuntu-copilot-cli .
 ```
 
 ## CI
