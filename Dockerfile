@@ -12,14 +12,13 @@ RUN apt-get update \
 RUN curl -fsSL https://gh.io/copilot-install | PREFIX=/usr/local bash \
     && copilot --version
 
-RUN mkdir -p /workspace && chown ubuntu:ubuntu /workspace
+RUN mkdir -p /workspace
 
-USER ubuntu
-ENV HOME=/home/ubuntu
+ENV HOME=/root
 
 # hve-core plugin + statusline and folder-trust settings
-COPY --chown=ubuntu:ubuntu config /tmp/config
-COPY --chown=ubuntu:ubuntu scripts/configure-copilot.sh /tmp/configure-copilot.sh
+COPY config /tmp/config
+COPY scripts/configure-copilot.sh /tmp/configure-copilot.sh
 RUN bash /tmp/configure-copilot.sh && rm -rf /tmp/config /tmp/configure-copilot.sh
 
 # Authentication token for Copilot CLI; pass at runtime: docker run -e COPILOT_GITHUB_TOKEN=...
