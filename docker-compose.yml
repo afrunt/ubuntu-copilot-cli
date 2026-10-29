@@ -1,0 +1,11 @@
+services:
+  copilot:
+    image: afrunt/ubuntu-copilot-cli
+    stdin_open: true
+    tty: true
+    environment:
+      COPILOT_GITHUB_TOKEN: ${COPILOT_GITHUB_TOKEN}
+    volumes:
+      - ./workspace:/workspace
+      # Optional: MCP servers config (create the file first, otherwise Docker makes a directory)
+      - ./mcp-config.json:/home/ubuntu/.copilot/mcp-config.json:ro

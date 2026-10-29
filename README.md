@@ -22,6 +22,20 @@ copilot
 
 `COPILOT_GITHUB_TOKEN` is a fine-grained PAT with the "Copilot Requests" permission.
 
+## MCP settings
+
+Mount only the MCP file, not the whole `~/.copilot`, so the baked-in settings and hve-core plugin stay intact:
+
+```bash
+docker run -it --rm \
+  -e COPILOT_GITHUB_TOKEN=<token> \
+  -v "$PWD":/workspace \
+  -v "$PWD/mcp-config.json":/home/ubuntu/.copilot/mcp-config.json:ro \
+  afrunt/ubuntu-copilot-cli
+```
+
+`docker-compose.yml` has the same setup (`docker compose run --rm copilot`). Project-level MCP config in the mounted workspace also works. Pass secrets used by MCP servers via `-e`.
+
 ## Local build
 
 ```bash
