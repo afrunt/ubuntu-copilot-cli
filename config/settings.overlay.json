@@ -16,5 +16,6 @@
     "showCiStatus": true,
     "showSchedules": true,
     "showCustom": true
-  }
+  },
+  "showTipsOnStartup": false
 }

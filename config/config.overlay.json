@@ -1,3 +1,7 @@
 {
-  "trustedFolders": ["/", "/workspace"]
+  "trustedFolders": [
+    "/",
+    "/workspace"
+  ],
+  "appTipShown": true
 }
