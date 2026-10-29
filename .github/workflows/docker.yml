@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      IMAGE: ${{ vars.DOCKERHUB_IMAGE || format('{0}/ubuntu-copilot-cli', secrets.DOCKERHUB_USERNAME) }}
+      IMAGE: docker.io/afrunt/ubuntu-copilot-cli
     permissions:
       contents: read
     steps:

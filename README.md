@@ -5,7 +5,7 @@ Multi-arch (`linux/amd64`, `linux/arm64`) Docker image based on `ubuntu:latest` 
 - Copilot CLI does not ask to trust the working directory (`trustedFolders: ["/"]`).
 - All status line (footer) options are enabled.
 - Runs as non-root user `ubuntu`, workdir `/workspace`.
-- Rebuilt daily (no cache) by GitHub Actions and pushed to Docker Hub as `latest` and `YYYYMMDD`.
+- Rebuilt daily (no cache) by GitHub Actions and pushed to Docker Hub (`afrunt/ubuntu-copilot-cli`) as `latest` and `YYYYMMDD`.
 
 ## Usage
 
@@ -26,4 +26,4 @@ docker build -t ubuntu-copilot-cli .
 
 ## CI setup
 
-Repository secrets: `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN` (Docker Hub access token). Optional repository variable `DOCKERHUB_IMAGE` (default `<DOCKERHUB_USERNAME>/ubuntu-copilot-cli`). Pull requests build without pushing.
+Repository secrets: `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN` (Docker Hub access token). Pull requests build without pushing.
