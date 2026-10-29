@@ -2,6 +2,7 @@
 
 Multi-arch (`linux/amd64`, `linux/arm64`) Docker image based on `ubuntu:latest` with [GitHub Copilot CLI](https://github.com/github/copilot-cli) and the [hve-core](https://github.com/microsoft/hve-core) plugin preinstalled.
 
+- Installed: latest Copilot CLI, hve-core plugin (`hve-core@hve-core`), git, jq, ripgrep.
 - Copilot CLI does not ask to trust the working directory (`trustedFolders: ["/"]`).
 - All status line (footer) options are enabled.
 - No startup banner, tips or app promo; the container starts a `bash` terminal, run `copilot` inside it.
@@ -27,6 +28,6 @@ copilot
 docker build -t ubuntu-copilot-cli .
 ```
 
-## CI setup
+## CI
 
-Repository secrets: `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN` (Docker Hub access token). Pull requests build without pushing.
+GitHub Actions (`.github/workflows/docker.yml`) builds on push to `main`, daily at 03:17 UTC and on manual dispatch. Pull requests build without pushing.
