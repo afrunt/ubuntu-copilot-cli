@@ -1,4 +1,5 @@
 {
+  "banner": "never",
   "footer": {
     "showModelEffort": true,
     "showDirectory": true,

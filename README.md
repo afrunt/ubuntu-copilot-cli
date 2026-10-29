@@ -4,6 +4,7 @@ Multi-arch (`linux/amd64`, `linux/arm64`) Docker image based on `ubuntu:latest` 
 
 - Copilot CLI does not ask to trust the working directory (`trustedFolders: ["/"]`).
 - All status line (footer) options are enabled.
+- No startup banner; the container starts a `bash` terminal, run `copilot` inside it.
 - Runs as non-root user `ubuntu`, workdir `/workspace`.
 - Rebuilt daily (no cache) by GitHub Actions and pushed to Docker Hub (`afrunt/ubuntu-copilot-cli`) as `latest` and `YYYYMMDD`.
 
@@ -14,9 +15,11 @@ docker run -it --rm \
   -e COPILOT_GITHUB_TOKEN=<token> \
   -v "$PWD":/workspace \
   afrunt/ubuntu-copilot-cli
+# then, inside the container:
+copilot
 ```
 
-`COPILOT_GITHUB_TOKEN` is a fine-grained PAT with the "Copilot Requests" permission. Extra args go to `copilot`; use `--entrypoint bash` for a shell.
+`COPILOT_GITHUB_TOKEN` is a fine-grained PAT with the "Copilot Requests" permission.
 
 ## Local build
 
