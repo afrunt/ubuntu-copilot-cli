@@ -26,4 +26,4 @@ RUN bash /tmp/configure-copilot.sh && rm -rf /tmp/config /tmp/configure-copilot.
 ENV COPILOT_GITHUB_TOKEN=""
 
 WORKDIR /workspace
-CMD ["bash"]
+CMD ["sh"]
